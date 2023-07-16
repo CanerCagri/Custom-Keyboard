@@ -13,6 +13,13 @@
 		01CBE4322A63E56D008026B0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 01CBE4302A63E56D008026B0 /* LaunchScreen.storyboard */; };
 		01CBE43C2A63E635008026B0 /* CustomKeyboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01CBE43B2A63E635008026B0 /* CustomKeyboardViewController.swift */; };
 		01CBE43E2A63E81A008026B0 /* CKTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01CBE43D2A63E81A008026B0 /* CKTextField.swift */; };
+		01CBE4412A63F9E8008026B0 /* WelcomeFormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01CBE4402A63F9E8008026B0 /* WelcomeFormViewController.swift */; };
+		01CBE4462A63FA72008026B0 /* CKTitleLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01CBE4452A63FA72008026B0 /* CKTitleLabel.swift */; };
+		01CBE4492A63FABF008026B0 /* CKButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01CBE4482A63FABF008026B0 /* CKButton.swift */; };
+		01CBE44B2A63FAFA008026B0 /* CKCloseButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01CBE44A2A63FAFA008026B0 /* CKCloseButton.swift */; };
+		01CBE44E2A63FB5C008026B0 /* CKContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01CBE44D2A63FB5C008026B0 /* CKContainerView.swift */; };
+		01CBE4512A63FDAD008026B0 /* UIViewController+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01CBE4502A63FDAD008026B0 /* UIViewController+Ext.swift */; };
+		01CBE4532A63FDF8008026B0 /* UIView+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01CBE4522A63FDF8008026B0 /* UIView+Ext.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +31,13 @@
 		01CBE4332A63E56D008026B0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		01CBE43B2A63E635008026B0 /* CustomKeyboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomKeyboardViewController.swift; sourceTree = "<group>"; };
 		01CBE43D2A63E81A008026B0 /* CKTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CKTextField.swift; sourceTree = "<group>"; };
+		01CBE4402A63F9E8008026B0 /* WelcomeFormViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeFormViewController.swift; sourceTree = "<group>"; };
+		01CBE4452A63FA72008026B0 /* CKTitleLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CKTitleLabel.swift; sourceTree = "<group>"; };
+		01CBE4482A63FABF008026B0 /* CKButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CKButton.swift; sourceTree = "<group>"; };
+		01CBE44A2A63FAFA008026B0 /* CKCloseButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CKCloseButton.swift; sourceTree = "<group>"; };
+		01CBE44D2A63FB5C008026B0 /* CKContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CKContainerView.swift; sourceTree = "<group>"; };
+		01CBE4502A63FDAD008026B0 /* UIViewController+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Ext.swift"; sourceTree = "<group>"; };
+		01CBE4522A63FDF8008026B0 /* UIView+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Ext.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,13 +72,76 @@
 			children = (
 				01CBE4252A63E56C008026B0 /* AppDelegate.swift */,
 				01CBE4272A63E56C008026B0 /* SceneDelegate.swift */,
-				01CBE43B2A63E635008026B0 /* CustomKeyboardViewController.swift */,
-				01CBE43D2A63E81A008026B0 /* CKTextField.swift */,
+				01CBE43F2A63F9CD008026B0 /* Scenes */,
+				01CBE4422A63F9EF008026B0 /* CustomComponents */,
+				01CBE44F2A63FD95008026B0 /* Extensions */,
 				01CBE42E2A63E56D008026B0 /* Assets.xcassets */,
 				01CBE4302A63E56D008026B0 /* LaunchScreen.storyboard */,
 				01CBE4332A63E56D008026B0 /* Info.plist */,
 			);
 			path = "Custom-Keyboard";
+			sourceTree = "<group>";
+		};
+		01CBE43F2A63F9CD008026B0 /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				01CBE43B2A63E635008026B0 /* CustomKeyboardViewController.swift */,
+				01CBE4402A63F9E8008026B0 /* WelcomeFormViewController.swift */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		01CBE4422A63F9EF008026B0 /* CustomComponents */ = {
+			isa = PBXGroup;
+			children = (
+				01CBE44C2A63FB50008026B0 /* Views */,
+				01CBE4472A63FAB4008026B0 /* Button */,
+				01CBE4442A63FA62008026B0 /* Label */,
+				01CBE4432A63FA19008026B0 /* TextField */,
+			);
+			path = CustomComponents;
+			sourceTree = "<group>";
+		};
+		01CBE4432A63FA19008026B0 /* TextField */ = {
+			isa = PBXGroup;
+			children = (
+				01CBE43D2A63E81A008026B0 /* CKTextField.swift */,
+			);
+			path = TextField;
+			sourceTree = "<group>";
+		};
+		01CBE4442A63FA62008026B0 /* Label */ = {
+			isa = PBXGroup;
+			children = (
+				01CBE4452A63FA72008026B0 /* CKTitleLabel.swift */,
+			);
+			path = Label;
+			sourceTree = "<group>";
+		};
+		01CBE4472A63FAB4008026B0 /* Button */ = {
+			isa = PBXGroup;
+			children = (
+				01CBE4482A63FABF008026B0 /* CKButton.swift */,
+				01CBE44A2A63FAFA008026B0 /* CKCloseButton.swift */,
+			);
+			path = Button;
+			sourceTree = "<group>";
+		};
+		01CBE44C2A63FB50008026B0 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				01CBE44D2A63FB5C008026B0 /* CKContainerView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		01CBE44F2A63FD95008026B0 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				01CBE4502A63FDAD008026B0 /* UIViewController+Ext.swift */,
+				01CBE4522A63FDF8008026B0 /* UIView+Ext.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,9 +214,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				01CBE4412A63F9E8008026B0 /* WelcomeFormViewController.swift in Sources */,
+				01CBE4532A63FDF8008026B0 /* UIView+Ext.swift in Sources */,
+				01CBE44E2A63FB5C008026B0 /* CKContainerView.swift in Sources */,
+				01CBE4512A63FDAD008026B0 /* UIViewController+Ext.swift in Sources */,
+				01CBE4462A63FA72008026B0 /* CKTitleLabel.swift in Sources */,
 				01CBE43C2A63E635008026B0 /* CustomKeyboardViewController.swift in Sources */,
 				01CBE4262A63E56C008026B0 /* AppDelegate.swift in Sources */,
+				01CBE4492A63FABF008026B0 /* CKButton.swift in Sources */,
 				01CBE4282A63E56C008026B0 /* SceneDelegate.swift in Sources */,
+				01CBE44B2A63FAFA008026B0 /* CKCloseButton.swift in Sources */,
 				01CBE43E2A63E81A008026B0 /* CKTextField.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -16,29 +16,17 @@ class CustomKeyboardViewController: UIViewController {
         super.viewDidLoad()
         
         view.backgroundColor = .red
-        
         setupLayout()
         
     }
     
-    func addKeyboardButton() {
-        let keyboardToolbar = UIToolbar()
-        keyboardToolbar.sizeToFit()
-        
-        let button = UIBarButtonItem(image: UIImage(systemName: "gift.fill"), style: .plain, target: self, action: #selector(yourButtonTapped))
-        let flexSpace = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
-        
-        keyboardToolbar.items = [flexSpace, button]
-        chatTextField.inputAccessoryView = keyboardToolbar
-    }
-    
-    @objc func yourButtonTapped() {
+    @objc func giftButtonTapped() {
         if isFaceIDAvailable() {
-            
+            authenticateWithFaceID()
         } else {
-            print("test")
+            // The device does not support Face ID or it is not configured.
         }
-        authenticateWithFaceID()
+        
     }
     
     func isFaceIDAvailable() -> Bool {
@@ -53,21 +41,32 @@ class CustomKeyboardViewController: UIViewController {
         
         // Biyometrik kimlik doğrulama yapılır
         if context.canEvaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, error: &error) {
-            let reason = "Face ID ile giriş yapmak için cihazınızı tarayın."
+            let reason = "Scan your device to sign in with Face ID."
             context.evaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, localizedReason: reason) { success, error in
                 DispatchQueue.main.async {
                     if success {
-                        print("Successfull entry")
+                        self.showWelcomeForm()
                     } else {
+                        // Face ID authentication failed or user canceled the process.
+                        // You can provide appropriate feedback to the user.
                         print("Canceled")
                     }
                 }
             }
         } else {
-            print("Something went wrong. Please try again later.")
+            // The device does not support Face ID or it is not configured.
         }
     }
-
+    
+    func showWelcomeForm() {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.2 ) { [weak self] in
+            let popupVc = WelcomeFormViewController()
+            
+            popupVc.modalTransitionStyle = .crossDissolve
+            popupVc.modalPresentationStyle = .overFullScreen
+            self?.present(popupVc, animated: true)
+        }
+    }
     
     func setupLayout() {
         view.addSubview(chatTextField)
@@ -84,5 +83,16 @@ extension CustomKeyboardViewController: UITextFieldDelegate {
     
     func textFieldDidBeginEditing(_ textField: UITextField) {
         addKeyboardButton()
+    }
+    
+    func addKeyboardButton() {
+        let keyboardToolbar = UIToolbar()
+        keyboardToolbar.sizeToFit()
+        
+        let button = UIBarButtonItem(image: UIImage(systemName: "gift.fill"), style: .plain, target: self, action: #selector(giftButtonTapped))
+        let flexSpace = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
+        
+        keyboardToolbar.items = [flexSpace, button]
+        chatTextField.inputAccessoryView = keyboardToolbar
     }
 }
